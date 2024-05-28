@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:simple_card/widgets/button.dart';
+import 'package:simple_card/widgets/currency_card.dart';
 
 void main() => runApp(const App());
 
@@ -45,7 +46,7 @@ class App extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 120,
+                  height: 75,
                 ),
                 const SizedBox(
                   height: 5,
@@ -110,65 +111,31 @@ class App extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Container(
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff1f2123),
-                    borderRadius: BorderRadius.circular(25),
+                const CurrencyCard(
+                  name: 'Euro',
+                  code: 'EUR',
+                  amount: '6 428',
+                  icon: Icons.euro,
+                  isInverted: false,
+                ),
+                Transform.translate(
+                  offset: const Offset(0, -20),
+                  child: const CurrencyCard(
+                    name: 'Bitcoin',
+                    code: 'BTC',
+                    amount: '1 324',
+                    icon: Icons.currency_bitcoin,
+                    isInverted: true,
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Euro',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Row(
-                              children: [
-                                const Text(
-                                  '6 428',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                const SizedBox(width: 10),
-                                Text(
-                                  'EUR',
-                                  style: TextStyle(
-                                    color: Colors.white.withOpacity(0.7),
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        Transform.scale(
-                          scale: 2.2,
-                          child: Transform.translate(
-                            offset: const Offset(-5, 16),
-                            child: const Icon(
-                              Icons.euro,
-                              color: Colors.white,
-                              size: 90,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
+                ),
+                Transform.translate(
+                  offset: const Offset(0, -40),
+                  child: const CurrencyCard(
+                    name: 'Dollar',
+                    code: 'USD',
+                    amount: '10 728',
+                    icon: Icons.attach_money,
+                    isInverted: false,
                   ),
                 ),
               ],
