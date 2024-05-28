@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:simple_card/widgets/button.dart';
 import 'package:simple_card/widgets/currency_card.dart';
 
@@ -112,31 +111,28 @@ class App extends StatelessWidget {
                   height: 20,
                 ),
                 const CurrencyCard(
+                  offset: 0,
                   name: 'Euro',
                   code: 'EUR',
                   amount: '6 428',
                   icon: Icons.euro,
                   isInverted: false,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -20),
-                  child: const CurrencyCard(
-                    name: 'Bitcoin',
-                    code: 'BTC',
-                    amount: '1 324',
-                    icon: Icons.currency_bitcoin,
-                    isInverted: true,
-                  ),
+                const CurrencyCard(
+                  offset: -20,
+                  name: 'Bitcoin',
+                  code: 'BTC',
+                  amount: '1 324',
+                  icon: Icons.currency_bitcoin,
+                  isInverted: true,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -40),
-                  child: const CurrencyCard(
-                    name: 'Dollar',
-                    code: 'USD',
-                    amount: '10 728',
-                    icon: Icons.attach_money,
-                    isInverted: false,
-                  ),
+                const CurrencyCard(
+                  offset: -40,
+                  name: 'Dollar',
+                  code: 'USD',
+                  amount: '10 728',
+                  icon: Icons.attach_money,
+                  isInverted: false,
                 ),
               ],
             ),
